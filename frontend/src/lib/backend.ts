@@ -1,9 +1,8 @@
 import { Mode, Key, modes } from "./keys"
 
-// TODO:
 export const URI = import.meta.env.DEV
     ? "http://0.0.0.0:8000"
-    : "TODO"
+    : "https://piano-scale-backend.deno.dev"
 
 export async function getMode(key: Key, mode: Mode): Promise<number[]> {
     const url = new URL(URI)

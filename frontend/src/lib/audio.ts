@@ -1,13 +1,18 @@
 import { URI } from "./backend"
 
-const context = new AudioContext
+let context: AudioContext
+let sample: AudioBuffer | void
 
-const sample = await fetch(`${URI}/audio`)
-    .then(response => response.arrayBuffer())
-    .then(buffer => context.decodeAudioData(buffer))
-    .catch(() => alert("Server unavailable"))
+async function init() {
+    context = new AudioContext
+    sample = await fetch(`${URI}/audio`)
+        .then(response => response.arrayBuffer())
+        .then(buffer => context.decodeAudioData(buffer))
+        .catch(() => alert("Server unavailable"))
+}
 
-export function playKey(note: number) {
+export async function playKey(note: number) {
+    await init()
     if (sample) {
         const source = context.createBufferSource()
         source.buffer = sample
