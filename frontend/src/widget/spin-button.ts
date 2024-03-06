@@ -62,7 +62,7 @@ export class SpinButton<T> extends LitElement {
         }
 
         span {
-            min-width: 6em;
+            min-width: 5.4em;
             text-align: right;
         }
     `]

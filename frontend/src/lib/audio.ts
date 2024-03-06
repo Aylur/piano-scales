@@ -4,6 +4,9 @@ let context: AudioContext
 let sample: AudioBuffer | void
 
 async function init() {
+    if (context)
+        return
+
     context = new AudioContext
     sample = await fetch(`${URI}/audio`)
         .then(response => response.arrayBuffer())

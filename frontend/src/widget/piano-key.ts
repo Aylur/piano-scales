@@ -48,7 +48,7 @@ export class PianoKey extends LitElement {
             background-color: white;
             color: black;
             box-shadow: inset 0 -3px 0 1px rgba(0,0,0, 0.2);
-            min-height: calc(${size} * 2);
+            min-height: calc(${size} * 1.6);
             min-width: calc(${size} * .5);
 
             &:hover:not(.disabled) {
@@ -70,7 +70,7 @@ export class PianoKey extends LitElement {
             color: white;
             margin: 0 calc(${size} * -.2);
             z-index: 1;
-            min-height: calc(${size} * 2 - ${size} * .5);
+            min-height: calc(${size} * 1.6 - ${size} * .5);
             min-width: calc(${size} * .4);
 
             &:hover:not(.disabled) {

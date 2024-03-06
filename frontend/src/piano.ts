@@ -98,7 +98,7 @@ export class Piano extends LitElement {
         header {
             display: flex;
             align-items: center;
-            margin-bottom: .3rem;
+            margin-bottom: .5rem;
 
             .title {
                 flex: 1;
@@ -122,7 +122,7 @@ export class Piano extends LitElement {
         }
 
         piano-key {
-            --piano-size: 8rem;
+            --piano-size: 7rem;
         }
 
         main {
