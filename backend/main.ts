@@ -2,8 +2,12 @@ import { header } from "./header.ts"
 import { Key, Mode, scale } from "./key.ts"
 
 async function audio() {
-    const file = Deno.env.get("piano-c3-wav") || "c3.wav"
-    const wav = await Deno.readFile(file)
+    const env = Deno.env.get("piano-c3-wav")
+    if (env) {
+        return fetch(env)
+    }
+
+    const wav = await Deno.readFile("c3.wav")
     return new Response(wav, {
         headers: header({
             "Content-Type": "audio/mpeg",
